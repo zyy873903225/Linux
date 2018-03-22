@@ -1,0 +1,24 @@
+#include <stdio.h>  
+
+int main(void)
+
+ {
+
+     char buf[128] = {0};  // 初始化为0
+
+     FILE *fp = fopen("	foo.txt", "r");  //读取foo.txt文件
+
+     while (0 != fread(buf, 1, 127, fp))    
+{
+
+         printf("%s",  buf);
+
+         memset(buf, 0, 128);      // 清0
+
+    }
+
+fclose(fp);
+
+return 0;
+
+}
